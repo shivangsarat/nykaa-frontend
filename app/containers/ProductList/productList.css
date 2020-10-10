@@ -1,0 +1,99 @@
+.FpTkd{
+    max-width: 100%!important;
+    margin: 0px!important;
+    padding:0px!important;
+}
+
+.head_margin {
+    border-bottom: 1px solid #000000;
+    /* height: 10%; */
+}
+
+.head_logo {
+    height: 50px;
+    padding-left: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.head_logo_mobile {
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.search_div {
+    margin-top: 3%;
+    /* height: 10%; */
+    padding:1%;
+}
+
+.search_textbox {
+    width: 80%;
+    display: block!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    border: 1.5px solid #000000;
+    padding: 0.5%;
+    border-radius: 2px;
+    /* margin-bottom:1%; */
+}
+
+.search_textbox_mobile {
+    width: 80%;
+    display: block!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    border: 1.5px solid #000000;
+    padding: 1%;
+    border-radius: 2px;
+}
+
+.product_item {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    display: block;
+    padding:1%;
+    /* width: 110%; */
+}
+
+.card_action {
+    height: 100%;
+}
+
+.product_card {
+    width: 100%;
+    height: 100%;
+}
+
+.card_image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 178px;
+    width: 100%;
+}
+
+.product_title {
+    margin-top: 20%;
+}
+
+.product_size_div p {
+    display: inline-block;
+}
+
+.product_sizes {
+    margin-right: 8px;
+}
+
+.scroll_top_btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: 2px solid #000000;
+    background-color: #ffffff;
+}

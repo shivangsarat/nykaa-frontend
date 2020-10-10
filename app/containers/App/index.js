@@ -17,6 +17,8 @@ import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 
+import ProductList from '../ProductList';
+
 import GlobalStyle from '../../global-styles';
 
 const AppWrapper = styled.div`
@@ -37,13 +39,16 @@ export default function App() {
       >
         <meta name="description" content="A React.js Boilerplate application" />
       </Helmet>
-      <Header />
+      {/* <Header /> */}
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        {/* <Route exact path="/" component={HomePage} /> */}
+        <Route exact path="/" component={ProductList} />
         <Route path="/features" component={FeaturePage} />
+        <Route exact path="/plp" component={ProductList} />
+        {/* <Route exact path="/:product/p/:sku" component={ProductList} /> */}
         <Route path="" component={NotFoundPage} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
       <GlobalStyle />
     </AppWrapper>
   );
