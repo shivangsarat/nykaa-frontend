@@ -11,10 +11,10 @@ describe('<H3 />', () => {
   });
 
   it('should render its text', () => {
-    const children = 'Text';
-    const { container, queryByText } = render(<H3>{children}</H3>);
+    const childrenText = 'Text';
+    const { container, queryByText } = render(<H3>{childrenText}</H3>);
     const { childNodes } = container.querySelector('h3');
     expect(childNodes).toHaveLength(1);
-    expect(queryByText(children)).not.toBeNull();
+    expect(queryByText(childrenText)).not.toBeNull();
   });
 });
