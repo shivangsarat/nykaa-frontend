@@ -13,21 +13,13 @@ import { compose } from 'redux';
 import { createStructuredSelector } from 'reselect';
 
 import {
-  BrowserView,
-  MobileView,
   isBrowser,
-  isMobile,
 } from "react-device-detect";
 
 import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import Input from '@material-ui/core/Input';
 import TextField from '@material-ui/core/TextField';
 
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
@@ -40,7 +32,6 @@ import { useInjectReducer } from '../../utils/injectReducer';
 import { useInjectSaga } from '../../utils/injectSaga';
 
 import { makeSelectProductList } from './selector';
-import { makeSelectLoading, makeSelectError } from "containers/App/selectors";
 import { fetchProductList, searchProduct } from './actions';
 import reducer from './reducer';
 import saga from './saga';
@@ -112,6 +103,16 @@ const ProductList = ({productLists, onFetchProductList, fetchMoreData, onSearchV
         window.scrollTo({top: 0, behavior: 'smooth'});
     };
 
+    const debounce = (fn, delay = 300) => {
+        let timer;
+        return (...args) => {
+            clearTimeout(timer)
+            timer = setTimeout(() => {
+                fn.apply(args)
+            }, delay);
+        }
+    }
+
     const searchItem = (e) => {
         console.log("e.target.value", e.target.value);
         // console.log("e.key", e.key);
@@ -161,7 +162,7 @@ const ProductList = ({productLists, onFetchProductList, fetchMoreData, onSearchV
                 label="Search"
                 variant="outlined"
                 className={isBrowser === true ? "search_textbox" : "search_textbox_mobile"}
-                onChange={(e) => searchItem(e)}
+                onChange={(e) => debounce(searchItem(e), 500)}
                 onKeyDown={(e) => keyDownEvent(e)}
                 style={{width: "80%"}}
                 InputProps={{
